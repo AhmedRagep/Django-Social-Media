@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block body %}
+
+    <main>
+        <div class="main">
+          <div class="container">
+            <div class="col-lg-8 mx-auto" style="margin-top: 120px;margin-bottom: 100px;">
+              <div class="col-lg-12 mx-auto">
+                <div class="single-post">
+                  <div style="text-align: center;">
+                    <h1>Edit <span class="green">Profile</span></h1>
+                  </div>
+                  <div class="post-contant">
+                    <hr> 
+                    <form id="commentForm" method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {% bootstrap_form userform %}
+                      {% bootstrap_form profileform %}
+                      {% buttons %}
+                      <div class="d-grid">
+                        <button type="submit" class="btn btn-secondary btn-lg btn-block">Edit</button>
+                      </div>
+                      {% endbuttons %}
+                    </form>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+    {% endblock body %}
